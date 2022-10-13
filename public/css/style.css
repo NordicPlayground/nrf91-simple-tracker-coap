@@ -1,0 +1,104 @@
+#leaflet-map {
+	height: calc(100vh - 50px);
+	width: 100vw; 
+}
+
+#trackView {
+	margin-top: 50px;
+}
+
+.logo-icon {
+    height: 28px;
+    vertical-align: unset;
+}
+
+.card {
+	border: 0px;
+}
+
+.btn.float {
+	position: absolute;
+	max-width: 150px;
+	z-index: 999;
+}
+
+.btn.float.bottom-right {
+	bottom: 35px;
+	right: 20px;
+}
+
+.menu {
+	height: 50px;
+	background-color: white;
+	padding-top: 5px;
+}
+
+.settings-icon, .connect-icon {
+	height: 20px;
+	vertical-align: unset;
+}
+
+.main {
+	background-color: #B2E5F0;
+}
+
+
+.nrf-blue {
+	color: #00a9ce !important;
+}
+
+.nrf-light-blue {
+	color: #b2e5f0 !important;
+}
+
+.disabled {
+	opacity: 0.3;
+}
+
+.top-card {
+	margin-top: 70px;
+}
+
+.border-bottom {
+	border-bottom-color: lightgrey;
+}
+
+.border-right {
+	border-right-color: lightgrey;
+}
+
+#splashView {
+	background-color: #B2E5F0;
+}
+
+#mainlogo {
+	width: 250px;
+}
+
+.flex-even {
+	flex: 1;
+}
+
+.whole-screen {
+	width: 100%;
+	height: 100vh;
+}
+
+.whole-width {
+	width: 100%;
+}
+
+.desktop-friendly-size {
+	max-width: 100vw!important;
+}
+
+.black{
+	background-color: black;
+}
+
+.list-group-item.active,
+.btn-nrf {
+	color: white!important;
+	background-color: #00a9ce;
+	border-color: #00a9ce;
+}
