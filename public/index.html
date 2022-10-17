@@ -6,6 +6,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	
 	<!-- Leaflet -->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
 	<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
@@ -24,19 +29,14 @@
 
 <body class="desktop-friendly-size black whole-screen d-flex flex-column">
 
-	<!-- Splash view -->
-	<div id="splashView" class="d-flex flex-column justify-content-center align-items-center flex-fill">
-		<img id="mainlogo" src="images/Logo_Trans_RGB_Vertical-optimized.svg">
-	</div>
-
 	<!-- Top bar -->
 	<div class="d-flex flex-row menu align-items-center justify-content-between pr-3 pl-3 fixed-top shadow desktop-friendly-size">
-		<div class="d-flex flex-row align-items-center">
-			<div class="pr-1"><img src="images/nordic_logo_small.png" class="logo-icon"></div>
-			<h5 id="deviceNameTitle" class="font-weight-bold nrf-blue"></h5>
+		<div class="pr-1"><img src="images/nordic_logo_small.png" class="logo-icon"></div>
+		<h1 id="deviceNameTitle" class="nrf-blue"></h1>
+		<div>
+			<h6 class="d-none"><a id="trackBtn" class="view-btn nrf-light-blue">MAP</a></h6>
+			<img id="settingsBtn" src="images/settings_icon.svg" class="view-btn settings-icon d-none">
 		</div>
-		<h6><a id="trackBtn" class="view-btn nrf-light-blue">MAP</a></h6>
-		<img id="settingsBtn" src="images/settings_icon.svg" class="view-btn settings-icon">
 	</div> 
 
 	<!-- Track view -->
@@ -46,26 +46,25 @@
 	</div>
 
 	<!-- Settings view -->
-	<div id="settingsView" class="d-none align-items-center whole-width main flex-fill flex-column desktop-friendly-size">
+	<div id="settingsView" class="d-flex align-items-center whole-width main flex-fill flex-column desktop-friendly-size">
 		<div class="card w-75 mb-4 rounded-sm top-card">
 			<div class="card-body">
-				<h5 class="card-title">Connection Information</h5>
-				<label for="target-url">Target</label>
-				<input type="text" id="target-url" class="form-control mb-3" aria-label="With text input" placeholder="coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160"></input>
+				<h2 class="card-title">CInput CoAP Server URL including device information</h2>
+				<textarea id="target-url" class="form-control mb-3" aria-label="With text input" placeholder="coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160"></textarea>
 				<a id="trackBtn" class="btn btn-block btn-nrf rounded-0 view-btn">Connect</a>
 			</div>
 		</div>
 		<div class="card w-75 mb-4 rounded-sm ">
 			<div class="card-body">
+				<h2 class="card-title">About</h2>
 				<p class="card-text small text-muted">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					The nRF91 Simple Traking website is part of the nordic Academy Course XXX
 				</p>
 				<p class="card-text small text-muted">
-					Please refer to the <em>Getting Started Guide</em> in the 
-					<a href="#" class="nrf-blue">
-						Lorem ipsum dolor sit amet
-					</a>
-					for more details.
+					Input a valid CoAP URL and see the location of a nFR91 device on a map
+				</p>
+				<p class="card-text small text-muted">
+					Source code is avalable on <a target="_blank" href="https://github.com/NordicPlayground/nrf91-simple-tracker-coap" class="nrf-blue">GitHub</a>
 				</p>
 			</div>
 		</div>

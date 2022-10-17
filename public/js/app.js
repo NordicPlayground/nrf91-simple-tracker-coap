@@ -11,6 +11,8 @@ let markers = [];
 const markerStackSize = 10;
 let circle = null;
 
+const defaultTitle = 'nRF91 Simple Tracker'
+
 
 // Setup the map
 
@@ -145,6 +147,7 @@ $(document).ready(() => {
 	// Set initial values 
 	$('#target-url').val(targetURL);
 	$("#deviceNameTitle").text(targetURL.split("/").pop());
+	$("#deviceNameTitle").text(defaultTitle);
 
 	// Tab bar view selector buttons:
 	$('.view-btn').click(({ target }) => {

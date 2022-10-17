@@ -1,3 +1,18 @@
+body {
+	color: #607D8B;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 14px;
+	font-weight: bold;
+}
+
 #leaflet-map {
 	height: calc(100vh - 50px);
 	width: 100vw; 
@@ -39,16 +54,16 @@
 }
 
 .main {
-	background-color: #B2E5F0;
+	background-color: #607D8B;
 }
 
 
 .nrf-blue {
-	color: #00a9ce !important;
+	color: #607D8B !important;
 }
 
 .nrf-light-blue {
-	color: #b2e5f0 !important;
+	color: #607d8b85 !important;
 }
 
 .disabled {
@@ -65,10 +80,6 @@
 
 .border-right {
 	border-right-color: lightgrey;
-}
-
-#splashView {
-	background-color: #B2E5F0;
 }
 
 #mainlogo {
