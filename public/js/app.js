@@ -4,7 +4,7 @@ let requestInterval;
 let flipped = false;
 let targetURL = localStorage.getItem('targetUrl') === "" ?
     "coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160" :
-    localStorage.getItem('targetUrl') ;
+    localStorage.getItem('targetUrl');
 
 let intervalTimer = null;
 let lastTime = '';
@@ -136,7 +136,7 @@ function getData() {
 				'1 second ago',
 				"Connection Failed, Ensure COAP target is correct and try to connect again.",
 				'Error',
-				10000,
+				100000,
 			);
 
 			stopPolling();
@@ -144,8 +144,54 @@ function getData() {
 		});
 }
 
+function showView(id) {
+
+    // Code for all other keys
+    ['track', 'settings']
+        .filter(key => key !== id)
+        .forEach(key => {
+            $(`#${key}View`).removeClass('d-flex').addClass('d-none');
+        });
+
+    // Code for current key
+    $(`#${id}Btn`).removeClass('nrf-light-blue').addClass('nrf-blue');
+    $(`#${id}View`).removeClass('d-none').addClass('d-flex');
+
+    // Explicit code
+    if (id === 'settings') {
+        targetURL = $('#target-url').val().trim();
+        $('#target-url').focus();
+
+        // Hide settings-button, as you are now in settings
+        $("#settingsBtn").css("visibility", "hidden");
+
+        // Remove all toasts, as they are now in the way
+        $(".toast").remove();
+        
+        $("#disconnectedBtn").addClass("disabled");
+
+        localStorage.setItem('targetUrl',  targetURL);
+        stopPolling();	
+
+    } else if (id === 'track' || id === 'connectToMap') {
+        targetURL = localStorage.getItem('targetUrl') === "" ?
+        "coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160" :
+        localStorage.getItem('targetUrl');
+
+        $("#deviceNameTitle").text(targetURL.split("/").pop());
+        
+        // Show settings-button
+        $("#settingsBtn").css("visibility", "visible");
+
+        clearMarkers();
+        leafletMap.invalidateSize();
+        initPolling();
+    }
+}
+
 // Main function
 $(document).ready(() => {
+    $('#target-url').focus();
 
 	// Set initial values 
 	$('#target-url').val(targetURL);
@@ -158,37 +204,27 @@ $(document).ready(() => {
 	$('.view-btn').click(({ target }) => {
 		const id = target.id.replace('Btn', '');
 
-        // Code for all other keys
-		['track', 'settings']
-			.filter(key => key !== id)
-			.forEach(key => {
-				$(`#${key}View`).removeClass('d-flex').addClass('d-none');
-			});
+        showView(id);
+	});
 
-        // Code for current key
-		$(`#${id}Btn`).removeClass('nrf-light-blue').addClass('nrf-blue');
-		$(`#${id}View`).removeClass('d-none').addClass('d-flex');
+    // Syntax is different because the elements appear after document load
+    $("body").on("click", ".toastBtn", (({ target }) => {
+        showView("settings")
+    }));
 
-        // Explicit stuff
-		if (id === 'settings') {
-			targetURL = $('#target-url').val().trim();
-
-			$("#disconnectedBtn").addClass("disabled");
-
-			localStorage.setItem('targetUrl',  targetURL);
-			stopPolling();	
-		} else if (id === 'track' || id === 'connectToMap') {
-            
-            $("#deviceNameTitle").text(targetURL.split("/").pop());
-            
-			clearMarkers();
-			leafletMap.invalidateSize();
+    $("body").on("click", ".reconnectBtn", (({ target }) => {
+        $(".toast").remove(); // Remove toasts, as we are updating
+        if ($('#connectionBtn').attr('data-connection-status') === 'true') {
+			stopPolling();
+		} else {
 			initPolling();
 		}
-	});
+    }));
 
 	$('#connectionBtn').click( () => {
         
+
+        $(".toast").remove(); // Remove toasts, as we are updating
 		if ($('#connectionBtn').attr('data-connection-status') === 'true') {
 			stopPolling();
 		} else {

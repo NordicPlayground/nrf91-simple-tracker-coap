@@ -4,6 +4,10 @@ body {
     overflow: hidden;
 }
 
+a {
+    text-decoration: underline;
+}
+
 h1 {
 	font-size: 18px;
 	font-weight: 400;
@@ -63,6 +67,7 @@ h2 {
 .settings-icon, .connect-icon {
 	height: 20px;
 	vertical-align: unset;
+    visibility: hidden;
 }
 
 .main {

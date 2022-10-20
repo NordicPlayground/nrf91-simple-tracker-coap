@@ -46,8 +46,8 @@
 	<div id="settingsView" class="d-flex align-items-center whole-width main flex-fill flex-column desktop-friendly-size">
 		<div class="card w-75 mb-4 top-card">
 			<div class="card-body">
-				<h2 class="card-title">CInput CoAP Server URL including device information</h2>
-				<textarea id="target-url" class="form-control mb-3" aria-label="With text input" placeholder="coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160"></textarea>
+				<h2 class="card-title">Input CoAP Server URL including device information</h2>
+				<textarea id="target-url" class="form-control mb-3" onClick="this.setSelectionRange(0, this.value.length)" aria-label="With text input" placeholder="coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160"></textarea>
 				<a id="trackBtn" class="btn btn-block btn-nrf view-btn">Connect</a>
 			</div>
 		</div>
@@ -60,6 +60,9 @@
 				<p class="card-text small text-muted">
 					Input a valid CoAP URL and see the location of a nFR91 device on a map
 				</p>
+                <p class="card-text small text-muted">
+                    The nRF91 Simple Tracker is a low-power GPS tracker that uses cellular technologies  (LTE-M or NB-IoT) to send GPS location data over CoAP. More details about the firmware running on the nRF91 series device can be found on Nordic Developer Academy
+                </p>
 				<p class="card-text small text-muted">
 					Source code is avalable on <a target="_blank" href="https://github.com/NordicPlayground/nrf91-simple-tracker-coap" class="nrf-blue">GitHub</a>
 				</p>
