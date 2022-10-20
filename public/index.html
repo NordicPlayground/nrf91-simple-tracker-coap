@@ -33,32 +33,29 @@
 	<div class="d-flex flex-row menu align-items-center justify-content-between pr-3 pl-3 fixed-top shadow desktop-friendly-size">
 		<div class="pr-1"><img src="images/nordic_logo_small.png" class="logo-icon"></div>
 		<h1 id="deviceNameTitle" class="nrf-blue"></h1>
-		<div>
-			<h6 class="d-none"><a id="trackBtn" class="view-btn nrf-light-blue">MAP</a></h6>
-			<img id="settingsBtn" src="images/settings_icon.svg" class="view-btn settings-icon d-none">
-		</div>
-	</div> 
+        <img id="settingsBtn" src="images/settings_icon.svg" class="btn view-btn settings-icon">
+	</div>
 
 	<!-- Track view -->
 	<div id="trackView" class="d-none flex-column flex-even">
 		<div id="leaflet-map"></div>
-		<a data-connection-status="false" id="connectionBtn" class="btn btn-block btn-nrf rounded-0 float bottom-right">Connect</a>
+		<a data-connection-status="false" id="connectionBtn" class="btn btn-block btn-nrf float bottom-right">Connect</a>
 	</div>
 
 	<!-- Settings view -->
 	<div id="settingsView" class="d-flex align-items-center whole-width main flex-fill flex-column desktop-friendly-size">
-		<div class="card w-75 mb-4 rounded-sm top-card">
+		<div class="card w-75 mb-4 top-card">
 			<div class="card-body">
 				<h2 class="card-title">CInput CoAP Server URL including device information</h2>
 				<textarea id="target-url" class="form-control mb-3" aria-label="With text input" placeholder="coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160"></textarea>
-				<a id="trackBtn" class="btn btn-block btn-nrf rounded-0 view-btn">Connect</a>
+				<a id="trackBtn" class="btn btn-block btn-nrf view-btn">Connect</a>
 			</div>
 		</div>
-		<div class="card w-75 mb-4 rounded-sm ">
+		<div class="card w-75 mb-4">
 			<div class="card-body">
 				<h2 class="card-title">About</h2>
 				<p class="card-text small text-muted">
-					The nRF91 Simple Traking website is part of the nordic Academy Course XXX
+					The nRF91 Simple Traking website is part of the Nordic Academy <a href="https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/">Cellular IoT Fundamentals Course</a>
 				</p>
 				<p class="card-text small text-muted">
 					Input a valid CoAP URL and see the location of a nFR91 device on a map

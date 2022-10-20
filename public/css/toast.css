@@ -27,17 +27,27 @@
 }
 
 .toast-container > .toast-wrapper > .toast > .toast-header strong {
-	padding-right: 20px
+    padding-left: 10px;
+    margin: 0;
+    font: light 14px/19px Roboto;
 }
 
 .toast-header {
-	padding: 10px;
-	background-color: #00a9ce !important;
+	padding: 5px 10px 5px 10px;
+	background-color: #F44336 !important;
+    color: #FFFFFF;
 }
 
-.toast-body {
-	margin: 10px;
-	padding-bottom: 15px;
+.toast-header > text-muted {
+    color: #FFFFFF;
+}
+
+.toast-body {/* Layout Properties */
+    padding: 20px;
 	font-size: 1rem;
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	font: normal 14px/19px Roboto;
+}
+
+.toast {
+    border-radius: 0px;
 }

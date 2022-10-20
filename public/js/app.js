@@ -1,9 +1,10 @@
 // Global objects
-
 const leafletMap = L.map('leaflet-map').setView([63.4206897, 10.4372859], 16);
 let requestInterval;
 let flipped = false;
-let targetURL = localStorage.getItem('targetUrl') === undefined? "coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160" : localStorage.getItem('targetUrl') ;
+let targetURL = localStorage.getItem('targetUrl') === "" ?
+    "coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160" :
+    localStorage.getItem('targetUrl') ;
 
 let intervalTimer = null;
 let lastTime = '';
@@ -15,7 +16,6 @@ const defaultTitle = 'nRF91 Simple Tracker'
 
 
 // Setup the map
-
 leafletMap.addLayer(L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
@@ -48,6 +48,8 @@ function resetAccuracyCircle(){
 	}
 }
 
+
+
 function stopPolling(){
 	if (intervalTimer !== null) {
 		clearInterval(intervalTimer);
@@ -63,7 +65,7 @@ function clearMarkers() {
 	markers.forEach( marker => leafletMap.removeLayer(marker));
 	markers = [];
 	lastTime = '';
-  }
+}
 
 function clearMarker(markerToDelete) {
 	var new_markers = [];
@@ -72,9 +74,9 @@ function clearMarker(markerToDelete) {
 	  if (marker !== markerToDelete) new_markers.push(marker);
 	})
 	markers = new_markers;
-  }
+}
 
-  // Show toast message
+// Show toast message
 function showToast(title, subtitle, content, type, delay) {
 	$.toast({ title, subtitle, content, type, delay });
 }
@@ -144,25 +146,30 @@ function getData() {
 
 // Main function
 $(document).ready(() => {
+
 	// Set initial values 
 	$('#target-url').val(targetURL);
-	$("#deviceNameTitle").text(targetURL.split("/").pop());
 	$("#deviceNameTitle").text(defaultTitle);
+    //$(`#settingsBtn`).addClass('d-none');
+
+    document.getElementsByClassName('.view-btn')
 
 	// Tab bar view selector buttons:
 	$('.view-btn').click(({ target }) => {
 		const id = target.id.replace('Btn', '');
 
-		['splash', 'track', 'settings']
+        // Code for all other keys
+		['track', 'settings']
 			.filter(key => key !== id)
 			.forEach(key => {
 				$(`#${key}View`).removeClass('d-flex').addClass('d-none');
-				$(`#${key}Btn`).removeClass('nrf-blue').addClass('nrf-light-blue');
 			});
 
+        // Code for current key
 		$(`#${id}Btn`).removeClass('nrf-light-blue').addClass('nrf-blue');
 		$(`#${id}View`).removeClass('d-none').addClass('d-flex');
 
+        // Explicit stuff
 		if (id === 'settings') {
 			targetURL = $('#target-url').val().trim();
 
@@ -171,6 +178,9 @@ $(document).ready(() => {
 			localStorage.setItem('targetUrl',  targetURL);
 			stopPolling();	
 		} else if (id === 'track' || id === 'connectToMap') {
+            
+            $("#deviceNameTitle").text(targetURL.split("/").pop());
+            
 			clearMarkers();
 			leafletMap.invalidateSize();
 			initPolling();
@@ -178,6 +188,7 @@ $(document).ready(() => {
 	});
 
 	$('#connectionBtn').click( () => {
+        
 		if ($('#connectionBtn').attr('data-connection-status') === 'true') {
 			stopPolling();
 		} else {
@@ -190,6 +201,5 @@ $(document).ready(() => {
 		targetURL = $('#target-url').val().trim();
 		localStorage.setItem('targetUrl', targetURL);
 		leafletMap.invalidateSize();
-		$("#deviceNameTitle").text(targetURL.split("/").pop());
 	});
 });

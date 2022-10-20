@@ -1,6 +1,7 @@
 body {
 	color: #607D8B;
 	font-family: 'Roboto', sans-serif;
+    overflow: hidden;
 }
 
 h1 {
@@ -29,6 +30,7 @@ h2 {
 
 .card {
 	border: 0px;
+    border-radius: 0px
 }
 
 .btn.float {
@@ -37,9 +39,19 @@ h2 {
 	z-index: 999;
 }
 
+.btn:hover {
+    cursor: pointer;
+}
+
 .btn.float.bottom-right {
 	bottom: 35px;
 	right: 20px;
+}
+
+#settingsBtn {
+    height: 28px;
+    padding: 0;
+    margin-bottom: 5px;
 }
 
 .menu {
@@ -109,7 +121,8 @@ h2 {
 
 .list-group-item.active,
 .btn-nrf {
-	color: white!important;
+    border-radius: 0;
+	color: white !important;
 	background-color: #00a9ce;
 	border-color: #00a9ce;
 }
