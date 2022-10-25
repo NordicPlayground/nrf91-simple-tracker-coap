@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://github.com/NordicPlayground/nrf91-simple-tracker-coap/tree/main/public/images/Logo_Trans_RGB_Vertical-optimized.svg">
+  <img src="https://github.com/NordicPlayground/nrf91-simple-tracker-coap/tree/main/public/images/512px-Nordic_Semiconductor_Company_Logo.png">
 </p>
 
 ## Introduction
-TODO
+This repository contains source code for the nRF91 Simple Tracker application which is part of the Nordic Academy [Cellular IoT Fundamentals Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/). The main purpose of the application is to demonstrate how to pull data from the nRF91 device using [CoAP](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/coap_client/README.html)
 
 ## Features
 * Connect to any device nRF91 Device GPS Data from a COAP server
@@ -17,7 +17,16 @@ The relevant code for connecting to the COAP API is available in `routes/coapDat
 Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nRF6943&series_token=nRF9160)
 
 ## How to use
-TODO
+In order to use this web application you must first set up your Thingy:91 and connect it to nRF Connect for Cloud. Refer to the [Thingy:91 Get Started Guide](https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91/GetStarted).
+
+If you can see data from your Thingy:91 being published in nRF Connect for Cloud you are ready for the next steps:
+1. Copy your API Key from nRF Connect for Cloud - [https://nrfcloud.com/#/account](https://nrfcloud.com/#/account) 
+2. Open the live demo web app - [https://developer.nordicsemi.com/.pc-tools/nrf91-simple-tracker/](https://nordicplayground.github.io/nrf91-pizza/)  
+OR Clone this repository and enter "npm i", then "npm run server" from inside the nrf91-simple-tracker-coap directory
+3. Paste the API Key
+4. Click connect
+
+The application should now display live CoAP data from your nRF91 device.
 
 ## Limitations
 The app has only been tested on Chrome browsers in Windows and Android devices.
