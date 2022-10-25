@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/NordicPlayground/nrf91-simple-tracker-coap/tree/main/public/images/512px-Nordic_Semiconductor_Company_Logo.png">
+  <img style="width:50%;" src="/public/images/512px-Nordic_Semiconductor_Company_Logo.png">
 </p>
 
 ## Introduction
