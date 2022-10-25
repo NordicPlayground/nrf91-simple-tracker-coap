@@ -2,9 +2,9 @@
 const leafletMap = L.map('leaflet-map').setView([63.4206897, 10.4372859], 16);
 let requestInterval;
 let flipped = false;
-let targetURL = localStorage.getItem('targetUrl') === "" ?
+let targetURL = localStorage.getItem('targetUrl');/* === "" ?
     "coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160" :
-    localStorage.getItem('targetUrl');
+    localStorage.getItem('targetUrl');*/
 
 let intervalTimer = null;
 let lastTime = '';
@@ -48,21 +48,18 @@ function resetAccuracyCircle(){
 	}
 }
 
-
-
 function stopPolling(){
 	if (intervalTimer !== null) {
 		clearInterval(intervalTimer);
 		intervalTimer = null;
 	}
-
 	
 	$("#connectionBtn").attr('data-connection-status', 'false');
 	$("#connectionBtn").text("Connect");
 }
 
 function clearMarkers() {
-	markers.forEach( marker => leafletMap.removeLayer(marker));
+	markers.forEach(marker => leafletMap.removeLayer(marker));
 	markers = [];
 	lastTime = '';
 }
@@ -81,8 +78,16 @@ function showToast(title, subtitle, content, type, delay) {
 	$.toast({ title, subtitle, content, type, delay });
 }
 
+
+
 function initPolling() {
-	stopPolling();
+
+    stopPolling();
+    if (!checkValidURL(targetURL)) {
+        console.warn('Invalid target URL');
+        return;
+    }
+
 	
 	$("#connectionBtn").text("Connecting...");
 	$("#connectionBtn").attr('data-connection-status', 'true');
@@ -136,12 +141,30 @@ function getData() {
 				'1 second ago',
 				"Connection Failed, Ensure COAP target is correct and try to connect again.",
 				'Error',
-				100000,
+				10000,
 			);
 
 			stopPolling();
 		} 
 		});
+}
+
+function updateConnectButton() {
+    // Enable/disable button
+    if (checkValidURL(targetURL)) {
+        $('#trackBtn').removeClass('disabled');
+        $('#trackBtn').prop('disabled', false);
+    } else {
+        $('#trackBtn').addClass('disabled');
+        $('#trackBtn').prop('disabled', true);
+    }
+}
+
+function checkValidURL(URL) {
+    // coap url
+    const urlRegExp = /coap:\/\/[(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig
+
+    return urlRegExp.test(targetURL);
 }
 
 function showView(id) {
@@ -167,16 +190,15 @@ function showView(id) {
 
         // Remove all toasts, as they are now in the way
         $(".toast").remove();
-        
-        $("#disconnectedBtn").addClass("disabled");
 
         localStorage.setItem('targetUrl',  targetURL);
         stopPolling();	
 
     } else if (id === 'track' || id === 'connectToMap') {
-        targetURL = localStorage.getItem('targetUrl') === "" ?
+
+        targetURL = localStorage.getItem('targetUrl');/* === "" ?
         "coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160" :
-        localStorage.getItem('targetUrl');
+        localStorage.getItem('targetUrl');*/
 
         $("#deviceNameTitle").text(targetURL.split("/").pop());
         
@@ -196,8 +218,8 @@ $(document).ready(() => {
 	// Set initial values 
 	$('#target-url').val(targetURL);
 	$("#deviceNameTitle").text(defaultTitle);
-    //$(`#settingsBtn`).addClass('d-none');
-
+    updateConnectButton()
+    
     document.getElementsByClassName('.view-btn')
 
 	// Tab bar view selector buttons:
@@ -209,7 +231,7 @@ $(document).ready(() => {
 
     // Syntax is different because the elements appear after document load
     $("body").on("click", ".toastBtn", (({ target }) => {
-        showView("settings")
+        showView("settings");
     }));
 
     $("body").on("click", ".reconnectBtn", (({ target }) => {
@@ -222,8 +244,6 @@ $(document).ready(() => {
     }));
 
 	$('#connectionBtn').click( () => {
-        
-
         $(".toast").remove(); // Remove toasts, as we are updating
 		if ($('#connectionBtn').attr('data-connection-status') === 'true') {
 			stopPolling();
@@ -235,7 +255,8 @@ $(document).ready(() => {
 	// Settings view, api key change:
 	$('#target-url').on('input', () => {
 		targetURL = $('#target-url').val().trim();
-		localStorage.setItem('targetUrl', targetURL);
-		leafletMap.invalidateSize();
+        localStorage.setItem('targetUrl', targetURL);
+        leafletMap.invalidateSize();
+        updateConnectButton()
 	});
 });

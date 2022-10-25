@@ -44,18 +44,18 @@
 
 	<!-- Settings view -->
 	<div id="settingsView" class="d-flex align-items-center whole-width main flex-fill flex-column desktop-friendly-size">
-		<div class="card w-75 mb-4 top-card">
+		<div class="card mobile-width mb-4 top-card">
 			<div class="card-body">
 				<h2 class="card-title">Input CoAP Server URL including device information</h2>
-				<textarea id="target-url" class="form-control mb-3" onClick="this.setSelectionRange(0, this.value.length)" aria-label="With text input" placeholder="coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160"></textarea>
-				<a id="trackBtn" class="btn btn-block btn-nrf view-btn">Connect</a>
+				<textarea id="target-url" class="form-control mb-3" aria-label="With text input" placeholder="coap://my.coapserver.com/my.nRF9160"></textarea>
+				<button id="trackBtn" class="disabled btn btn-block btn-nrf view-btn">Connect</button>
 			</div>
 		</div>
-		<div class="card w-75 mb-4">
+		<div class="card mobile-width mb-4">
 			<div class="card-body">
 				<h2 class="card-title">About</h2>
 				<p class="card-text small text-muted">
-					The nRF91 Simple Traking website is part of the Nordic Academy <a href="https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/">Cellular IoT Fundamentals Course</a>
+					The nRF91 Simple Tracker website is part of the Nordic Academy <a target="_blank" class="nrf-blue" href="https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/">Cellular IoT Fundamentals Course</a>
 				</p>
 				<p class="card-text small text-muted">
 					Input a valid CoAP URL and see the location of a nFR91 device on a map
@@ -64,7 +64,7 @@
                     The nRF91 Simple Tracker is a low-power GPS tracker that uses cellular technologies  (LTE-M or NB-IoT) to send GPS location data over CoAP. More details about the firmware running on the nRF91 series device can be found on Nordic Developer Academy
                 </p>
 				<p class="card-text small text-muted">
-					Source code is avalable on <a target="_blank" href="https://github.com/NordicPlayground/nrf91-simple-tracker-coap" class="nrf-blue">GitHub</a>
+					Source code is available on <a target="_blank" class="nrf-blue" href="https://github.com/NordicPlayground/nrf91-simple-tracker-coap">GitHub</a>
 				</p>
 			</div>
 		</div>

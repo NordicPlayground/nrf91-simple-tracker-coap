@@ -47,6 +47,13 @@ h2 {
     cursor: pointer;
 }
 
+.btn.disabled {
+    opacity: 0.3;
+    background-color: #607D8B;
+    border-color: #607D8B;
+    cursor: default;
+}
+
 .btn.float.bottom-right {
 	bottom: 35px;
 	right: 20px;
@@ -83,10 +90,6 @@ h2 {
 	color: #607d8b85 !important;
 }
 
-.disabled {
-	opacity: 0.3;
-}
-
 .top-card {
 	margin-top: 70px;
 }
@@ -116,11 +119,15 @@ h2 {
 	width: 100%;
 }
 
+.mobile-width {
+    max-width: 320px;
+}
+
 .desktop-friendly-size {
 	max-width: 100vw!important;
 }
 
-.black{
+.black {
 	background-color: black;
 }
 
