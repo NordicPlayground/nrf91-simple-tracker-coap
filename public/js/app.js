@@ -138,7 +138,7 @@ function getData() {
 		},
 		error:  e => {
 			showToast("COAP Connection Error",
-				'1 second ago',
+				'',
 				"Connection Failed, Ensure COAP target is correct and try to connect again.",
 				'Error',
 				10000,
@@ -162,8 +162,9 @@ function updateConnectButton() {
 
 function checkValidURL(URL) {
     // coap url
-    const urlRegExp = /coap:\/\/[(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig
-
+    const urlRegExp = /^coap:\/\/[(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b(\/[-a-zA-Z0-9()@:%_\+.~#?&=]+)+$/i
+    console.log(URL);
+    console.log(urlRegExp.test(targetURL));
     return urlRegExp.test(targetURL);
 }
 
