@@ -16,9 +16,9 @@ Any of the following development hardware:
 
 ![Image of Thingy:91](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/thingy91.png)
 
-![Image of nRF9160 DK](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/nRF59160-DK.webp)
-
 Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nRF6943&series_token=nRF9160)
+
+![Image of nRF9160 DK](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/nRF59160-DK.webp)
 
 Nordic **nRF9160 DK** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nrf9160-DK&series_token=nRF9160)
 
@@ -67,6 +67,7 @@ The application should now display live CoAP data from your nRF91 device.
   $ [nodemon] starting `node index.js`
   $ Listening on Port: 6600
 ```
+5. View in your web browser using [http://127.0.0.1](http://127.0.0.1).
 
 ## Limitations
 1. The app has only been tested on Chrome browsers in Windows and Android devices.
