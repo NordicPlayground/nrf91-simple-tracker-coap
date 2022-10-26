@@ -7,29 +7,67 @@ This repository contains source code for the nRF91 Simple Tracker application wh
 
 ## Features
 * Connect to any device nRF91 Device GPS Data from a COAP server
-* Read and display GPS position
+* Read and display GPS position on a
 
 The relevant code for connecting to the COAP API is available in `routes/coapData.js`. The code for parsing data is also available in `routes/coapData.js`.
 
 ## Requirements
-![Image of Thingy:91](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/tree/main/public/images/thingy91.png)
+Any of the following development hardware: 
+![Image of Thingy:91](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/thingy91.png)
+![Image of nRF9160 DK](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/nRF59160-DK.png)
 
 Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nRF6943&series_token=nRF9160)
+Nordic **nRF9160 DK** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nrf9160-DK&series_token=nRF9160)
 
 ## How to use
-In order to use this web application you must first set up your Thingy:91 and connect it to nRF Connect for Cloud. Refer to the [Thingy:91 Get Started Guide](https://www.nordicsemi.com/Software-and-tools/Prototyping-platforms/Nordic-Thingy-91/GetStarted).
+In order to use this web application you must first set up your nRF91 to advertise it's GPS data on some publicly accessable CoAP Server. Refer to the [Cellular IOT Fundamentals Dev Academy Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/).
 
-If you can see data from your Thingy:91 being published in nRF Connect for Cloud you are ready for the next steps:
-1. Copy your API Key from nRF Connect for Cloud - [https://nrfcloud.com/#/account](https://nrfcloud.com/#/account) 
-2. Open the live demo web app - [https://developer.nordicsemi.com/.pc-tools/nrf91-simple-tracker/](https://nordicplayground.github.io/nrf91-pizza/)  
-OR Clone this repository and enter "npm i", then "npm run server" from inside the nrf91-simple-tracker-coap directory
-3. Paste the API Key
-4. Click connect
+If the GPS data is avalable on some CoAP server, you can:
+1. Copy that deveice URI into this app settings page
+2. Click connect
 
 The application should now display live CoAP data from your nRF91 device.
 
+## How to run localy
+
+1. Clone the code from this repo
+
+```bash
+  $ git clone https://github.com/NordicPlayground/nrf91-simple-tracker-coap.git
+```
+
+2. Go to the application folder
+
+```bash
+  $ cd nrf91-simple-tracker-coap
+```
+
+3. Run npm install
+
+```bash
+  $ npm i
+```
+
+4. Run Local server
+
+```bash
+  $ npm run server
+```
+
+**Result**
+
+```bash
+  $ [nodemon] 2.0.20
+  $ [nodemon] to restart at any time, enter `rs`
+  $ [nodemon] watching path(s): *.*
+  $ [nodemon] watching extensions: js,mjs,json
+  $ [nodemon] starting `node index.js`
+  $ Listening on Port: 6600
+```
+
 ## Limitations
-The app has only been tested on Chrome browsers in Windows and Android devices.
+1. The app has only been tested on Chrome browsers in Windows and Android devices.
+2. No autentication has been impliments to access the CoAP Server hence the CoAP server needs to be publicly available
 
 ## Third-party licenses
 * **Leaflet** - [BSD 2-Clause "Simplified" License](https://github.com/Leaflet/Leaflet/blob/master/LICENSE)
