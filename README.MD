@@ -13,10 +13,13 @@ The relevant code for connecting to the COAP API is available in `routes/coapDat
 
 ## Requirements
 Any of the following development hardware: 
+
 ![Image of Thingy:91](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/thingy91.png)
+
 ![Image of nRF9160 DK](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/nRF59160-DK.webp)
 
 Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nRF6943&series_token=nRF9160)
+
 Nordic **nRF9160 DK** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nrf9160-DK&series_token=nRF9160)
 
 ## How to use
