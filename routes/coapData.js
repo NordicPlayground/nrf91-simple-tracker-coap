@@ -36,12 +36,8 @@ router.post(`/`, (httpReq, httpRes) => {
 
 
 function validateData(data) {
-    //   valid coap URL >>> coap://californium.eclipseprojects.io/echo/cali.Ali.nRF9160
-    // invalid coap URL >>> coap://californium.eclipseprojects.io/echo/cali.351358811124772
-
     // valid data should look like this:
-    // [ '59.923513,10.668951', '29.5 m', '2022-10-11 17:06:332' ]
-    
+    // [ '59.923513,10.668951', '29.5 m', '2022-10-11 17:06:332' ]    
 
     let latlngRegex = /([0-9]*[.])?[0-9]+,([0-9]*[.])?[0-9]+/ig;
     let accuracyRegex = /([0-9]*[.])?[0-9]+ m/
