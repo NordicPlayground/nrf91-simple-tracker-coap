@@ -3,7 +3,7 @@
 </p>
 
 ## Introduction
-This repository contains source code for the nRF91 Simple Tracker application which is part of the Nordic Academy [Cellular IoT Fundamentals Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/). The main purpose of the application is to demonstrate how to pull data from the nRF91 device using [CoAP](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/coap_client/README.html)
+This repository contains source code for the nRF91 Simple Tracker application which is part of the Nordic Academy [Cellular IoT Fundamentals Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/). The main purpose of the application is to demonstrate how to pull data from the nRF91 series device using [CoAP](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/coap_client/README.html)
 
 ## Features
 * Connect to any device nRF91 Device GPS Data from a COAP server
@@ -23,13 +23,13 @@ Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordic
 Nordic **nRF9160 DK** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nrf9160-DK&series_token=nRF9160)
 
 ## How to use
-In order to use this web application you must first set up your nRF91 to advertise it's GPS data on some publicly accessible CoAP Server. Refer to the [Cellular IOT Fundamentals Dev Academy Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/).
+In order to use this web application you must first set up your nRF91 series device to advertise it's GPS data on some publicly accessible CoAP Server. Refer to the [Cellular IOT Fundamentals Dev Academy Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/).
 
 If the GPS data is available on some CoAP server, you can:
 1. Copy that device URI into this app settings page
 2. Click connect
 
-The application should now display live CoAP data from your nRF91 device.
+The application should now display live CoAP data from your nRF91 series device.
 
 ## How to run locally 
 
