@@ -14,7 +14,7 @@ The relevant code for connecting to the COAP API is available in `routes/coapDat
 ## Requirements
 Any of the following development hardware: 
 ![Image of Thingy:91](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/thingy91.png)
-![Image of nRF9160 DK](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/nRF59160-DK.png)
+![Image of nRF9160 DK](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/nRF59160-DK.webp)
 
 Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nRF6943&series_token=nRF9160)
 Nordic **nRF9160 DK** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nrf9160-DK&series_token=nRF9160)
@@ -67,7 +67,7 @@ The application should now display live CoAP data from your nRF91 device.
 
 ## Limitations
 1. The app has only been tested on Chrome browsers in Windows and Android devices.
-2. No autentication has been impliments to access the CoAP Server hence the CoAP server needs to be publicly available
+2. No autentication has been implimented to access the CoAP Server hence the CoAP server needs to be publicly available.
 
 ## Third-party licenses
 * **Leaflet** - [BSD 2-Clause "Simplified" License](https://github.com/Leaflet/Leaflet/blob/master/LICENSE)
