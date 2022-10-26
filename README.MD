@@ -14,24 +14,30 @@ The relevant code for connecting to the COAP API is available in `routes/coapDat
 ## Requirements
 Any of the following development hardware: 
 
-![Image of Thingy:91](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/thingy91.png)
-
-Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nRF6943&series_token=nRF9160)
-
 ![Image of nRF9160 DK](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/nRF59160-DK.webp)
 
 Nordic **nRF9160 DK** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nrf9160-DK&series_token=nRF9160)
 
+![Image of Thingy:91](https://github.com/NordicPlayground/nrf91-simple-tracker-coap/blob/main/public/images/thingy91.png)
+
+Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nRF6943&series_token=nRF9160)
+
+<a name="publicly"></a>
 ## How to use
 In order to use this web application you must first set up your nRF91 series device to advertise it's GPS data on some publicly accessible CoAP Server. Refer to the [Cellular IOT Fundamentals Dev Academy Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/).
 
 If the GPS data is available on some CoAP server, you can:
-1. Copy that device URI into this app settings page
-2. Click connect
+1. Go to the [web application](https://developer.nordicsemi.com/.pc-tools/nrf91-simple-tracker/) or run the app [locally](#locally).
+2. Copy the CoAP device URI as set in the firmware into this app settings page
+3. Click connect
+4. The application should now display live CoAP data from your nRF91 series device.
 
-The application should now display live CoAP data from your nRF91 series device.
-
+<a name="locally"></a>
 ## How to run locally 
+
+If you don't want to make use of the  [publicly](#publicly) hosted application you can run this application locally. 
+
+**Note:** [Node.js](https://nodejs.org/en/) is needed.
 
 1. Clone the code from this repo
 
