@@ -67,7 +67,7 @@ The application should now display live CoAP data from your nRF91 device.
   $ [nodemon] starting `node index.js`
   $ Listening on Port: 6600
 ```
-5. View in your web browser using [http://127.0.0.1](http://127.0.0.1).
+5. View in your web browser using [http://127.0.0.1:6600](http://127.0.0.1:6600).
 
 ## Limitations
 1. The app has only been tested on Chrome browsers in Windows and Android devices.
