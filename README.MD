@@ -7,7 +7,7 @@ This repository contains source code for the nRF91 Simple Tracker application wh
 
 ## Features
 * Connect to any device nRF91 Device GPS Data from a COAP server
-* Read and display GPS position on a
+* Read and display GPS position on a map
 
 The relevant code for connecting to the COAP API is available in `routes/coapData.js`. The code for parsing data is also available in `routes/coapData.js`.
 
@@ -23,15 +23,15 @@ Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordic
 Nordic **nRF9160 DK** Cellular IoT prototyping kit. [Buy here](https://www.nordicsemi.com/About-us/BuyOnline?search_token=nrf9160-DK&series_token=nRF9160)
 
 ## How to use
-In order to use this web application you must first set up your nRF91 to advertise it's GPS data on some publicly accessable CoAP Server. Refer to the [Cellular IOT Fundamentals Dev Academy Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/).
+In order to use this web application you must first set up your nRF91 to advertise it's GPS data on some publicly accessible CoAP Server. Refer to the [Cellular IOT Fundamentals Dev Academy Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/).
 
-If the GPS data is avalable on some CoAP server, you can:
-1. Copy that deveice URI into this app settings page
+If the GPS data is available on some CoAP server, you can:
+1. Copy that device URI into this app settings page
 2. Click connect
 
 The application should now display live CoAP data from your nRF91 device.
 
-## How to run localy
+## How to run locally 
 
 1. Clone the code from this repo
 
@@ -71,7 +71,7 @@ The application should now display live CoAP data from your nRF91 device.
 
 ## Limitations
 1. The app has only been tested on Chrome browsers in Windows and Android devices.
-2. No autentication has been implimented to access the CoAP Server hence the CoAP server needs to be publicly available.
+2. No authentication has been implemented to access the CoAP Server hence the CoAP server needs to be publicly available and with no authentication
 
 ## Third-party licenses
 * **Leaflet** - [BSD 2-Clause "Simplified" License](https://github.com/Leaflet/Leaflet/blob/master/LICENSE)
