@@ -3,10 +3,10 @@
 </p>
 
 ## Introduction
-This repository contains source code for the nRF91 Simple Tracker application which is part of the Nordic Academy [Cellular IoT Fundamentals Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/). The main purpose of the application is to demonstrate how to pull data from the nRF91 series device using [CoAP](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/coap_client/README.html)
+This repository contains source code for the nRF91 Simple Tracker application which is part of the Nordic Developer Academy [Cellular IoT Fundamentals Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/). The main purpose of the application is to demonstrate how to pull data from the nRF91 Series device using [CoAP](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/samples/nrf9160/coap_client/README.html)
 
 ## Features
-* Connect to any device nRF91 Device GPS Data from a COAP server
+* Connect to any nRF91 Series Device GPS Data from a COAP server
 * Read and display GPS position on a map
 
 The relevant code for connecting to the COAP API is available in `routes/coapData.js`. The code for parsing data is also available in `routes/coapData.js`.
@@ -24,13 +24,13 @@ Nordic **Thingy:91** Cellular IoT prototyping kit. [Buy here](https://www.nordic
 
 <a name="publicly"></a>
 ## How to use
-In order to use this web application you must first set up your nRF91 series device to advertise it's GPS data on some publicly accessible CoAP Server. Refer to the [Cellular IOT Fundamentals Dev Academy Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/).
+In order to use this web application you must first set up your nRF91 Series device to advertise its GPS data on some publicly accessible CoAP Server. Refer to the [Cellular IoT Fundamentals Nordic Developer Academy Course](https://academy.nordicsemi.com/courses/cellular-iot-fundamentals/)
 
-If the GPS data is available on some CoAP server, you can:
-1. Go to the [web application](https://developer.nordicsemi.com/.pc-tools/nrf91-simple-tracker/) or run the app [locally](#locally).
+If the GPS data is available on a CoAP server, you can:
+1. Go to the [web application](https://developer.nordicsemi.com/.pc-tools/nrf91-simple-tracker/) or run the app [locally](#locally)
 2. Copy the CoAP device URI as set in the firmware into this app settings page
 3. Click connect
-4. The application should now display live CoAP data from your nRF91 series device.
+4. The application should now display live CoAP data from your nRF91 Series device
 
 <a name="locally"></a>
 ## How to run locally 
@@ -76,7 +76,7 @@ If you don't want to make use of the  [publicly](#publicly) hosted application y
 5. View in your web browser using [http://127.0.0.1:6600](http://127.0.0.1:6600).
 
 ## Limitations
-1. The app has only been tested on Chrome browsers in Windows and Android devices.
+1. The app has only been tested on Chrome browsers in Windows and Android devices
 2. No authentication has been implemented to access the CoAP Server hence the CoAP server needs to be publicly available and with no authentication
 
 ## Third-party licenses
