@@ -162,7 +162,7 @@ function updateConnectButton() {
 
 function checkValidURL(URL) {
     // coap url
-    const urlRegExp = /^coap[s]?:\/\/[(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b(\/[-a-zA-Z0-9()@:%_\+.~#?&=]+)+$/i
+    const urlRegExp = /^coap[s]?:\/\/[(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,}\b(\/[-a-zA-Z0-9()@:%_\+.~#?&=]+)+$/i
     return urlRegExp.test(targetURL);
 }
 
